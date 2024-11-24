@@ -1,0 +1,13 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!.tmux.conf
+!.config/
+!.config/kitty/
+!.config/kitty/**
+!.config/nvim/
+!.config/nvim/**
+
+# etc...

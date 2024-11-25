@@ -3,8 +3,8 @@ require "nvchad.mappings"
 local map = vim.keymap.set
 local cmp = require "cmp"
 local neoscroll = require "neoscroll"
--- map("n", ";", ":", { desc = "CMD enter command mode" })
 
+map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
 -- move lines

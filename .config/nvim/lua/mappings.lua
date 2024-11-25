@@ -2,7 +2,7 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 local cmp = require "cmp"
-local neoscroll = require("neoscroll")
+local neoscroll = require "neoscroll"
 -- map("n", ";", ":", { desc = "CMD enter command mode" })
 
 map("i", "jk", "<ESC>")
@@ -44,15 +44,27 @@ map("n", "<C-l>", "<Cmd>TmuxNavigateRight<CR>", { silent = true })
 map("n", "<C-\\>", "<Cmd>NvimTmuxNavigatePrevious<CR>", { silent = true })
 
 -- neoscroll
-local scrollDuration = 200;
+local scrollDuration = 100
 local keymap = {
-  ["<C-u>"] = function() neoscroll.ctrl_u({ duration = scrollDuration, }) end,
-  ["<C-d>"] = function() neoscroll.ctrl_d({ duration = scrollDuration, }) end,
-  ["<C-b>"] = function() neoscroll.ctrl_b({ duration = scrollDuration, }) end,
-  ["<C-f>"] = function() neoscroll.ctrl_f({ duration = scrollDuration, }) end,
-  ["<C-y>"] = function() neoscroll.scroll(-0.1, { move_cursor = false, duration = scrollDuration }) end,
-  ["<C-e>"] = function() neoscroll.scroll(0.1, { move_cursor = false, duration = scrollDuration }) end,
+  ["<C-u>"] = function()
+    neoscroll.ctrl_u { duration = scrollDuration }
+  end,
+  ["<C-d>"] = function()
+    neoscroll.ctrl_d { duration = scrollDuration }
+  end,
+  ["<C-b>"] = function()
+    neoscroll.ctrl_b { duration = scrollDuration }
+  end,
+  ["<C-f>"] = function()
+    neoscroll.ctrl_f { duration = scrollDuration }
+  end,
+  ["<C-y>"] = function()
+    neoscroll.scroll(-0.1, { move_cursor = false, duration = scrollDuration })
+  end,
+  ["<C-e>"] = function()
+    neoscroll.scroll(0.1, { move_cursor = false, duration = scrollDuration })
+  end,
 }
 for key, func in pairs(keymap) do
-  vim.keymap.set({ 'n', 'v', 'x' }, key, func)
+  vim.keymap.set({ "n", "v", "x" }, key, func)
 end

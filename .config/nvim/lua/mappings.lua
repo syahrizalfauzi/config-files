@@ -44,7 +44,7 @@ map("n", "<C-l>", "<Cmd>TmuxNavigateRight<CR>", { silent = true })
 map("n", "<C-\\>", "<Cmd>NvimTmuxNavigatePrevious<CR>", { silent = true })
 
 -- neoscroll
-local scrollDuration = 100
+local scrollDuration = 75
 local keymap = {
   ["<C-u>"] = function()
     neoscroll.ctrl_u { duration = scrollDuration }

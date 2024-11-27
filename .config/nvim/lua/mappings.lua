@@ -19,11 +19,11 @@ map("i", "jk", "<ESC>")
 --   require("github/copilot.vim").accept()
 -- end, { desc = "Copilot accept" })
 
-map("i", "<C-l>", 'copilot#Accept("\\<CR>")', {
-  expr = true,
-  replace_keycodes = false,
-})
-vim.g.copilot_no_tab_map = true
+-- map("i", "<C-p>", 'copilot#Accept("\\<CR>")', {
+--   expr = true,
+--   replace_keycodes = false,
+-- })
+-- vim.g.copilot_no_tab_map = true
 
 map("n", "<leader>ci", function()
   vim.api.nvim_feedkeys("ea", "n", false)

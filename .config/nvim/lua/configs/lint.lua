@@ -3,7 +3,7 @@ require("lint").linters_by_ft = {
   typescript = { "eslint_d" },
   javascriptreact = { "eslint_d" },
   typescriptreact = { "eslint_d" },
-  json = { "eslint_d" },
+  json = { "jsonlint" },
 }
 
 require("lint").linters.eslint.ignore_files = { "*.json" }

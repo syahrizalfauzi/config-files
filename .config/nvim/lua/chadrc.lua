@@ -56,7 +56,7 @@ M.base46 = {
     NvimTreeCursorLine = { standout = true },
     CursorLineNr = { standout = true },
     DiagnosticError = { standout = true },
-    DiagnosticWarn = { standout = true },
+    -- DiagnosticWarn = { standout = true },
     Visual = { bg = "light_grey" },
   },
 }

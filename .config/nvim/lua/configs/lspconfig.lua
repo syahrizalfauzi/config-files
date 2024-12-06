@@ -61,6 +61,10 @@ lspconfig.ts_ls.setup {
       "<cmd>lua organize_imports()<CR>",
       { noremap = true, silent = true }
     )
+    vim.o.expandtab = true -- expand tab input with spaces characters
+    vim.o.smartindent = true -- syntax aware indentations for newline inserts
+    vim.o.tabstop = 2 -- num of space characters per tab
+    vim.o.shiftwidth = 4 -- spaces per indentation level
   end,
   on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,

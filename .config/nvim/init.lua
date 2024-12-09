@@ -65,6 +65,13 @@ vim.api.nvim_set_hl(0, "LineNrAbove", { fg = "#51B3EC", bold = true })
 vim.api.nvim_set_hl(0, "LineNr", { fg = "white", bold = true })
 vim.api.nvim_set_hl(0, "LineNrBelow", { fg = "#FB508F", bold = true })
 
+vim.api.nvim_set_hl(0, "RainbowDelimiterRed", { link = "DiffDelete" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterYellow", { link = "Conditional" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterBlue", { link = "DiffAdd" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterOrange", { link = "String" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterGreen", { link = "Directory" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterViolet", { link = "Conditional" })
+vim.api.nvim_set_hl(0, "RainbowDelimiterCyan", { link = "DiagnosticOk" })
 -- Windows only
 -- vim.o.shell = "powershell"
 -- vim.o.shellcmdflag =

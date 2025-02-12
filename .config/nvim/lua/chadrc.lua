@@ -48,7 +48,7 @@ M.ui = {
 }
 M.base46 = {
   theme = "tokyodark",
-  -- transparency = true, uncomment if using neovide
+  transparency = true, -- uncomment if using wezterm
 
   hl_override = {
     Comment = { italic = true },

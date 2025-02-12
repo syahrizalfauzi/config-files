@@ -9,5 +9,6 @@
 !.config/kitty/**
 !.config/nvim/
 !.config/nvim/**
+!.wezterm.lua
 
 # etc...

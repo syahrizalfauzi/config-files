@@ -33,4 +33,7 @@ config.color_scheme = "Tokyo Night"
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 13.0
 
+config.animation_fps = 120
+config.cursor_blink_rate = 400
+
 return config

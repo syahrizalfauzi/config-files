@@ -16,3 +16,9 @@ vim.keymap.set({ "i" }, "<A-l>", "<Right>", { noremap = true, silent = false })
 
 vim.keymap.set({ "i" }, "<A-S-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
 vim.keymap.set({ "i" }, "<A-S-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+
+-- Vim-Tmux-Navigator
+vim.keymap.set("n", "<C-h>", "<Cmd>TmuxNavigateLeft<CR>", {})
+vim.keymap.set("n", "<C-j>", "<Cmd>TmuxNavigateDown<CR>", {})
+vim.keymap.set("n", "<C-k>", "<Cmd>TmuxNavigateUp<CR>", {})
+vim.keymap.set("n", "<C-l>", "<Cmd>TmuxNavigateRight<CR>", {})

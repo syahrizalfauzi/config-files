@@ -2,6 +2,7 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
+config.window_background_opacity = 0.8
 config.macos_window_background_blur = 30
 
 -- Function to toggle background blur
@@ -29,9 +30,9 @@ config.keys = {
 }
 config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
-config.color_scheme = "Tokyo Night"
+config.color_scheme = "Catppuccin Mocha"
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 13.0
+config.font_size = 14.0
 
 config.animation_fps = 120
 config.cursor_blink_rate = 400

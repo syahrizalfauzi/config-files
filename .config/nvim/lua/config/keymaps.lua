@@ -8,14 +8,12 @@ vim.keymap.set({ "n", "v" }, ";", ":", { noremap = true, silent = false })
 -- Map jk in insert mode to escape
 vim.keymap.set({ "i" }, "jk", "<Esc>", { noremap = true, silent = false })
 
--- Map alt HJKL to movement in insert mode, remap move line to alt shift JK
-vim.keymap.set({ "i" }, "<A-h>", "<Left>", { noremap = true, silent = false })
-vim.keymap.set({ "i" }, "<A-j>", "<Down>", { noremap = true, silent = false })
-vim.keymap.set({ "i" }, "<A-k>", "<Up>", { noremap = true, silent = false })
-vim.keymap.set({ "i" }, "<A-l>", "<Right>", { noremap = true, silent = false })
-
-vim.keymap.set({ "i" }, "<A-S-j>", "<esc><cmd>m .+1<cr>==gi", { desc = "Move Down" })
-vim.keymap.set({ "i" }, "<A-S-k>", "<esc><cmd>m .-2<cr>==gi", { desc = "Move Up" })
+-- Map ctrl HJKL to movement in insert mode, remap move line to alt shift JK
+-- IMPORTANT : make sure to remove C-k binding in lazyvim.plugins.lsp.keymaps (done in lua/plugins/nvim-lspconfig.lua)
+vim.keymap.set({ "i" }, "<C-h>", "<left>")
+vim.keymap.set({ "i" }, "<C-j>", "<down>")
+vim.keymap.set({ "i" }, "<C-k>", "<up>")
+vim.keymap.set({ "i" }, "<C-l>", "<Right>")
 
 -- Vim-Tmux-Navigator
 vim.keymap.set("n", "<C-h>", "<Cmd>TmuxNavigateLeft<CR>", {})

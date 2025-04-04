@@ -113,6 +113,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias nv="nvim"
+alias lg="lazygit"
+alias sozsh="source ~/.zshrc"
+alias cl="clear"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 

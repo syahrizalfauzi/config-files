@@ -44,6 +44,16 @@ return {
           action = "LazyGit",
         },
         {
+          desc = "Lazy",
+          key = "L",
+          action = "Lazy",
+        },
+        {
+          desc = "Mason",
+          key = "M",
+          action = "Mason",
+        },
+        {
           desc = "Quit",
           key = "q",
           action = "qa",

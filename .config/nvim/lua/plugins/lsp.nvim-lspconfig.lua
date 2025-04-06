@@ -99,21 +99,21 @@ return {
 
         -- Native neovim LSP completion
         -- Will show the completion menu when you start typing via the TextChangedI autocmd
-        if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_completion, event.buf) then
-          vim.api.nvim_create_autocmd({ "TextChangedI" }, {
-            buffer = event.buf,
-            callback = function()
-              vim.lsp.completion.get()
-            end,
-          })
-
-          -- Set popup menu color
-          vim.api.nvim_set_hl(0, "Pmenu", { link = "@field" })
-          vim.api.nvim_set_hl(0, "NoicePopupmenuMatch", { link = "rainbow4" })
-          vim.api.nvim_set_hl(0, "Special", { link = "@function" })
-
-          vim.lsp.completion.enable(true, client.id, event.buf)
-        end
+        -- if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_completion, event.buf) then
+        --   vim.api.nvim_create_autocmd({ "TextChangedI" }, {
+        --     buffer = event.buf,
+        --     callback = function()
+        --       vim.lsp.completion.get()
+        --     end,
+        --   })
+        --
+        --   -- Set popup menu color
+        --   vim.api.nvim_set_hl(0, "Pmenu", { link = "@field" })
+        --   vim.api.nvim_set_hl(0, "NoicePopupmenuMatch", { link = "rainbow4" })
+        --   vim.api.nvim_set_hl(0, "Special", { link = "@function" })
+        --
+        --   vim.lsp.completion.enable(true, client.id, event.buf)
+        -- end
       end,
     })
 
@@ -151,7 +151,7 @@ return {
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
     -- capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
-    -- capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities({}, false))
+    capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities({}, false))
 
     -- Enable the following language servers
     --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.

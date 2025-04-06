@@ -33,10 +33,10 @@ vim.keymap.set({ "i" }, "jk", "<Esc>", { noremap = true, silent = false })
 
 -- Map ctrl HJKL to movement in insert mode, remap move line to alt shift JK
 -- IMPORTANT : make sure to remove C-k binding in lazyvim.plugins.lsp.keymaps (done in lua/plugins/nvim-lspconfig.lua)
-vim.keymap.set({ "i" }, "<C-h>", "<left>")
-vim.keymap.set({ "i" }, "<C-j>", "<down>")
-vim.keymap.set({ "i" }, "<C-k>", "<up>")
-vim.keymap.set({ "i" }, "<C-l>", "<Right>")
+vim.keymap.set("i", "<C-h>", "<left>")
+vim.keymap.set("i", "<C-j>", "<down>")
+vim.keymap.set("i", "<C-k>", "<up>")
+vim.keymap.set("i", "<C-l>", "<Right>")
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -61,4 +61,4 @@ vim.keymap.del("n", "gri")
 vim.keymap.set("i", "<C-space>", function()
   vim.lsp.completion.get()
 end)
-vim.keymap.set("i", "<CR>", "pumvisible() ? '<C-y>' : '<CR>'", { expr = true })
+-- vim.keymap.set("i", "<CR>", "pumvisible() ? '<C-y>' : '<CR>'", { expr = true })

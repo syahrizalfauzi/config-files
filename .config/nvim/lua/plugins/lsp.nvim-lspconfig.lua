@@ -167,7 +167,25 @@ return {
       -- gopls = {},
       -- pyright = {},
       -- rust_analyzer = {},
-      -- ts_ls = {},
+      vtsls = {
+        filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+        settings = {
+          vtsls = {
+            tsserver = {
+              globalPlugins = {
+                {
+                  name = "@vue/typescript-plugin",
+                  location = require("mason-registry").get_package("vue-language-server"):get_install_path()
+                    .. "/node_modules/@vue/language-server",
+                  languages = { "vue" },
+                  configNamespace = "typescript",
+                  enableForWorkspaceTypeScriptVersions = true,
+                },
+              },
+            },
+          },
+        },
+      },
       html = {
         filetypes = { "html", "blade" },
         init_options = {
@@ -224,6 +242,7 @@ return {
       "stylelint",
       "stylua",
       "vtsls",
+      "vue-language-server",
       "yamlls",
     })
     require("mason-tool-installer").setup({ ensure_installed = ensure_installed })

@@ -168,6 +168,16 @@ return {
       -- pyright = {},
       -- rust_analyzer = {},
       -- ts_ls = {},
+      html = {
+        filetypes = { "html", "blade" },
+        init_options = {
+          configurationSection = { "html", "css", "javascript" },
+          embeddedLanguages = {
+            css = true,
+            javascript = true,
+          },
+        },
+      },
       lua_ls = {
         settings = {
           Lua = {
@@ -186,6 +196,7 @@ return {
       "stylua",
       "tailwindcss",
       "bashls",
+      "blade-formatter",
       "cssls",
       "css_variables",
       "cssmodules_ls",
@@ -197,6 +208,7 @@ return {
       "gopls",
       "hadolint",
       "html",
+      "intelephense",
       "jsonls",
       "lua_ls",
       "markdown-toc",

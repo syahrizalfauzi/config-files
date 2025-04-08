@@ -117,6 +117,10 @@ alias nv="nvim"
 alias lg="lazygit"
 alias sozsh="source ~/.zshrc"
 alias cl="clear"
+alias pas="php artisan serve"
+alias ns="npm start"
+alias ni="npm install"
+alias nip="npm install --package-lock-only"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 

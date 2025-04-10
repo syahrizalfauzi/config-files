@@ -36,7 +36,7 @@ return {
       enable = true,
       keymaps = {
         init_selection = "<C-Space>",
-        scope_incremental = "<C-Space>",
+        node_incremental = "<C-Space>",
         node_decremental = "<BS>",
       },
     },

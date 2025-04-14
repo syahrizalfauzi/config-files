@@ -121,6 +121,8 @@ alias pas="php artisan serve"
 alias ns="npm start"
 alias ni="npm install"
 alias nip="npm install --package-lock-only"
+alias nb="npm run build"
+alias nbs="npm run build-nosentry"
 
 eval "$(/opt/homebrew/bin/brew shellenv)"
 

@@ -232,7 +232,7 @@ return {
       "markdown-toc",
       "markdownlint-cli2",
       "marksman",
-      "prettier",
+      "prettierd",
       "pretty-php",
       "pyright",
       "rust_analyzer",

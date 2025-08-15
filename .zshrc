@@ -140,6 +140,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
 export PATH=$HOME/flutter/bin:$PATH
+export PATH="$HOME/Library/Android/sdk:$PATH"
 if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=/opt/homebrew/opt/ruby/bin:$PATH
   export PATH=`gem environment gemdir`/bin:$PATH

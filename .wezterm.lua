@@ -4,6 +4,7 @@ local config = wezterm.config_builder()
 
 config.window_background_opacity = 0.9
 config.macos_window_background_blur = 30
+config.window_close_confirmation = "NeverPrompt"
 
 -- Function to toggle background blur
 local function toggle_background_blur(window)

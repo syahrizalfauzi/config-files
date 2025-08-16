@@ -62,3 +62,15 @@ vim.keymap.set("i", "<C-space>", function()
   vim.lsp.completion.get()
 end)
 -- vim.keymap.set("i", "<CR>", "pumvisible() ? '<C-y>' : '<CR>'", { expr = true })
+
+-- Markdown Preview
+vim.keymap.set("n", "<leader>mp", "<cmd>MarkdownPreviewToggle<CR>", { desc = "Toggle Markdown Preview" })
+
+-- Copilot
+vim.keymap.set("i", "<C-]>", 'copilot#Accept("<CR>")', {
+  expr = true,
+  silent = true,
+  replace_keycodes = false,
+  desc = "Accept Copilot suggestion",
+})
+vim.g.copilot_no_tab_map = true

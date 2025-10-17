@@ -141,8 +141,11 @@ export PATH="/opt/homebrew/opt/php@7.4/bin:$PATH"
 export PATH="/opt/homebrew/opt/php@7.4/sbin:$PATH"
 export PATH=$HOME/flutter/bin:$PATH
 export PATH="$HOME/Library/Android/sdk:$PATH"
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
   export PATH=/opt/homebrew/opt/ruby/bin:$PATH
   export PATH=`gem environment gemdir`/bin:$PATH
 fi
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+eval "$(buf completion zsh)"

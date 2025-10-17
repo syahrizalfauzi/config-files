@@ -16,6 +16,8 @@ export PATH="$HOME/Library/Android/sdk:$PATH"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH="$HOME/Library/Android/sdk:$PATH"
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
 
 
 # Set name of the theme to load --- if set to "random", it will
@@ -50,8 +52,10 @@ alias nbs="npm run build-nosentry"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Completions
 eval "$(zoxide init zsh)"
 eval "$(buf completion zsh)"
+[ -s "/home/rizal/.bun/_bun" ] && source "/home/rizal/.bun/_bun"
 
 # Homebrew path
 OS="$(uname -s)"

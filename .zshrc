@@ -52,10 +52,6 @@ alias nbs="npm run build-nosentry"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Completions
-eval "$(zoxide init zsh)"
-eval "$(buf completion zsh)"
-[ -s "/home/rizal/.bun/_bun" ] && source "/home/rizal/.bun/_bun"
 
 # Homebrew path
 OS="$(uname -s)"
@@ -81,4 +77,9 @@ if [[ "$HAS_BREW" -eq 1 ]]; then
     export PATH=/opt/homebrew/opt/ruby/bin:$PATH
     export PATH=`gem environment gemdir`/bin:$PATH
   fi
+
+  # Completions
+  eval "$(zoxide init zsh)"
+  eval "$(buf completion zsh)"
+  [ -s "/home/rizal/.bun/_bun" ] && source "/home/rizal/.bun/_bun"
 fi

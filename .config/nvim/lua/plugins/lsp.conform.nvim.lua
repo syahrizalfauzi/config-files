@@ -32,10 +32,10 @@ return {
       lua = { "stylua" },
       php = { "pretty-php" },
       blade = { "blade-formatter" },
-      javascript = { "prettierd" },
-      javascriptreact = { "prettierd" },
-      typescript = { "prettierd" },
-      typescriptreact = { "prettierd" },
+      javascript = { "biome" },
+      javascriptreact = { "biome" },
+      typescript = { "biome" },
+      typescriptreact = { "biome" },
       -- Conform can also run multiple formatters sequentially
       -- python = { "isort", "black" },
       --

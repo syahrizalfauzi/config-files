@@ -18,6 +18,7 @@ export PATH="$HOME/Library/Android/sdk:$PATH"
 export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+export FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD=rxvx-drmj-upma-qirw
 
 
 # Set name of the theme to load --- if set to "random", it will

@@ -83,3 +83,6 @@ if [[ "$HAS_BREW" -eq 1 ]]; then
   eval "$(buf completion zsh)"
   [ -s "/home/rizal/.bun/_bun" ] && source "/home/rizal/.bun/_bun"
 fi
+
+# bun completions
+[ -s "/Users/syahrizalfauzi/.bun/_bun" ] && source "/Users/syahrizalfauzi/.bun/_bun"

@@ -2,8 +2,17 @@ local wezterm = require("wezterm")
 
 local config = wezterm.config_builder()
 
-config.window_background_opacity = 0.9
-config.macos_window_background_blur = 30
+local function is_macos()
+	local triple = os.getenv("WEZTERM_TARGET_TRIPLE")
+	return triple and (string.find(triple, "apple", 1, true) ~= nil or string.find(triple, "darwin", 1, true) ~= nil)
+end
+
+config.font_size = 11.0
+if is_macos() then
+	config.window_background_opacity = 0.9
+	config.macos_window_background_blur = 30
+	config.font_size = 14.0
+end
 config.window_close_confirmation = "NeverPrompt"
 
 -- Function to toggle background blur
@@ -33,7 +42,6 @@ config.enable_tab_bar = false
 config.window_decorations = "RESIZE"
 config.color_scheme = "Catppuccin Mocha"
 config.font = wezterm.font("JetBrainsMono Nerd Font")
-config.font_size = 14.0
 
 config.animation_fps = 120
 config.cursor_blink_rate = 400

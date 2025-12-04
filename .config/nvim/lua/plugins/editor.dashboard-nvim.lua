@@ -28,15 +28,17 @@ return {
           action = "FzfLua live_grep",
         },
         {
-          desc = "Explorer",
+          desc = "Explorer (yazi)",
           key = "e",
-          action = function()
-            require("oil").open_float(nil, {
-              preview = {
-                horizontal = true,
-              },
-            })
-          end,
+          action = "Yazi",
+          -- action = function()
+          -- require("yazi").toggle()
+          -- require("oil").open_float(nil, {
+          --   preview = {
+          --     horizontal = true,
+          --   },
+          -- })
+          -- end,
         },
         {
           desc = "LazyGit",

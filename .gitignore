@@ -9,6 +9,8 @@
 !.config/kitty/**
 !.config/nvim/
 !.config/nvim/**
+!.config/yazi/
+!.config/yazi/**
 !.wezterm.lua
 !.p10k.zsh
 !.zshrc

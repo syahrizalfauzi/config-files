@@ -3,8 +3,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
 local function is_macos()
-	local triple = os.getenv("WEZTERM_TARGET_TRIPLE")
-	return triple and (string.find(triple, "apple", 1, true) ~= nil or string.find(triple, "darwin", 1, true) ~= nil)
+	return wezterm.target_triple:find("darwin") ~= nil
 end
 
 config.font_size = 11.0

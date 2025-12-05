@@ -121,6 +121,10 @@ return {
     vim.api.nvim_set_hl(0, "DiagnosticHint", { link = "@comment.hint" })
     vim.api.nvim_set_hl(0, "DiagnosticWarn", { link = "@comment.warning" })
     vim.api.nvim_set_hl(0, "DiagnosticError", { link = "@comment.error" })
+    vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { link = "@comment.hint" })
+    vim.api.nvim_set_hl(0, "DiagnosticVirtualTextWarn", { link = "@comment.warning" })
+    vim.api.nvim_set_hl(0, "DiagnosticVirtualTextError", { link = "@comment.error" })
+
     vim.diagnostic.config({
       severity_sort = true,
       float = { border = "rounded", source = "if_many" },
@@ -133,20 +137,20 @@ return {
           [vim.diagnostic.severity.HINT] = "󰌶 ",
         },
       },
-      virtual_lines = true,
-      -- virtual_text = {
-      --   source = "if_many",
-      --   spacing = 2,
-      --   format = function(diagnostic)
-      --     local diagnostic_message = {
-      --       [vim.diagnostic.severity.ERROR] = diagnostic.message,
-      --       [vim.diagnostic.severity.WARN] = diagnostic.message,
-      --       [vim.diagnostic.severity.INFO] = diagnostic.message,
-      --       [vim.diagnostic.severity.HINT] = diagnostic.message,
-      --     }
-      --     return diagnostic_message[diagnostic.severity]
-      --   end,
-      -- },
+      -- virtual_lines = true,
+      virtual_text = {
+        source = "if_many",
+        spacing = 2,
+        format = function(diagnostic)
+          local diagnostic_message = {
+            [vim.diagnostic.severity.ERROR] = diagnostic.message,
+            [vim.diagnostic.severity.WARN] = diagnostic.message,
+            [vim.diagnostic.severity.INFO] = diagnostic.message,
+            [vim.diagnostic.severity.HINT] = diagnostic.message,
+          }
+          return diagnostic_message[diagnostic.severity]
+        end,
+      },
     })
 
     local capabilities = vim.lsp.protocol.make_client_capabilities()
@@ -213,7 +217,7 @@ return {
     vim.list_extend(ensure_installed, {
       "stylua",
       "tailwindcss",
-      "bashls",
+      -- "bashls",
       "biome",
       "blade-formatter",
       "cssls",

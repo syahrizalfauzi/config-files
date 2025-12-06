@@ -73,11 +73,27 @@ if [[ "$OS" == "Darwin" ]]; then
   BREW_BIN_PATH="/opt/homebrew/bin/brew"
   BREW_OPT_PATH="/opt/homebrew/opt"
 elif [[ "$OS" == "Linux" ]]; then
-  BREW_BIN_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
-  BREW_OPT_PATH="/home/linuxbrew/.linuxbrew/opt/"
+  if [ -d "/home/linuxbrew" ]; then
+    BREW_BIN_PATH="/home/linuxbrew/.linuxbrew/bin/brew"
+    BREW_OPT_PATH="/home/linuxbrew/.linuxbrew/opt/"
+  else
+    HAS_BREW=0
+  fi
 else
-  HAS_BREW = 0
+  HAS_BREW=0
 fi
+
+# Init / completions
+command -v zoxide &> /dev/null && \
+  eval "$(zoxide init zsh)" || \
+  echo "WARNING: zoxide is not installed. Install it to enable faster directory jumping."
+
+command -v buf &> /dev/null && \
+  eval "$(buf completion zsh)" || \
+  echo "WARNING: buf is not installed."
+
+[ -s "$HOME/.bun/bun" ] && source "$HOME/.bun/bun"
+[ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
 
 if [[ "$HAS_BREW" -eq 1 ]]; then
   eval "$($BREW_BIN_PATH shellenv)"
@@ -90,12 +106,4 @@ if [[ "$HAS_BREW" -eq 1 ]]; then
     export PATH=/opt/homebrew/opt/ruby/bin:$PATH
     export PATH=`gem environment gemdir`/bin:$PATH
   fi
-
-  # Completions
-  eval "$(zoxide init zsh)"
-  eval "$(buf completion zsh)"
-  [ -s "/home/rizal/.bun/_bun" ] && source "/home/rizal/.bun/_bun"
 fi
-
-# bun completions
-[ -s "/Users/syahrizalfauzi/.bun/_bun" ] && source "/Users/syahrizalfauzi/.bun/_bun"

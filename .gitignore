@@ -11,6 +11,8 @@
 !.config/nvim/**
 !.config/yazi/
 !.config/yazi/**
+!.config/zellij/
+!.config/zellij/**
 !.wezterm.lua
 !.p10k.zsh
 !.zshrc

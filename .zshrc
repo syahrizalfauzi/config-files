@@ -83,18 +83,6 @@ else
   HAS_BREW=0
 fi
 
-# Init / completions
-command -v zoxide &> /dev/null && \
-  eval "$(zoxide init zsh)" || \
-  echo "WARNING: zoxide is not installed. Install it to enable faster directory jumping."
-
-command -v buf &> /dev/null && \
-  eval "$(buf completion zsh)" || \
-  echo "WARNING: buf is not installed."
-
-[ -s "$HOME/.bun/bun" ] && source "$HOME/.bun/bun"
-[ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
-
 if [[ "$HAS_BREW" -eq 1 ]]; then
   eval "$($BREW_BIN_PATH shellenv)"
   export NVM_DIR="$HOME/.nvm"
@@ -107,3 +95,16 @@ if [[ "$HAS_BREW" -eq 1 ]]; then
     export PATH=`gem environment gemdir`/bin:$PATH
   fi
 fi
+
+# Init / completions
+command -v zoxide &> /dev/null && \
+  eval "$(zoxide init zsh)" || \
+  echo "WARNING: zoxide is not installed. Install it to enable faster directory jumping."
+
+command -v buf &> /dev/null && \
+  eval "$(buf completion zsh)" || \
+  echo "WARNING: buf is not installed."
+
+[ -s "$HOME/.bun/bun" ] && source "$HOME/.bun/bun"
+[ -s "/usr/share/nvm/init-nvm.sh" ] && source "/usr/share/nvm/init-nvm.sh"
+
